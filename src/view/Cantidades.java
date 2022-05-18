@@ -287,10 +287,7 @@ public class Cantidades extends javax.swing.JFrame {
             rs = stmt.executeQuery(SQL);
 
             if (rs.next() != rs.isAfterLast()) {
-                // String cuser = rs.getString("NoTarjeta");
-                // String nombre = rs.getString("Nombre");
                 String numero = rs.getString("NoCuenta");
-                // String cpass = rs.getString("Clave");
                 int cbal = Integer.parseInt(rs.getString("balance"));
                 if (cbal >= 20000) {
 
@@ -298,7 +295,6 @@ public class Cantidades extends javax.swing.JFrame {
                     setTemp((cbal - 20000) - amount1);
 
                     System.out.println(getTemp());
-
                     String SQL1 = "SELECT * FROM clientes";
                     stmt = con.createStatement();
                     rs = stmt.executeQuery(SQL1);
@@ -360,10 +356,7 @@ public class Cantidades extends javax.swing.JFrame {
             rs = stmt.executeQuery(SQL);
 
             if (rs.next() != rs.isAfterLast()) {
-                // String cuser = rs.getString("NoTarjeta");
-                // String nombre = rs.getString("Nombre");
                 String numero = rs.getString("NoCuenta");
-                // String cpass = rs.getString("Clave");
                 int cbal = Integer.parseInt(rs.getString("balance"));
                 if (cbal >= 50000) {
 
@@ -419,10 +412,7 @@ public class Cantidades extends javax.swing.JFrame {
             rs = stmt.executeQuery(SQL);
 
             if (rs.next() != rs.isAfterLast()) {
-                // String cuser = rs.getString("NoTarjeta");
-                // String nombre = rs.getString("Nombre");
                 String numero = rs.getString("NoCuenta");
-                // String cpass = rs.getString("Clave");
                 int cbal = Integer.parseInt(rs.getString("balance"));
                 if (cbal >= 100000) {
 
@@ -478,10 +468,7 @@ public class Cantidades extends javax.swing.JFrame {
             rs = stmt.executeQuery(SQL);
 
             if (rs.next() != rs.isAfterLast()) {
-                // String cuser = rs.getString("NoTarjeta");
-                // String nombre = rs.getString("Nombre");
                 String numero = rs.getString("NoCuenta");
-                // String cpass = rs.getString("Clave");
                 int cbal = Integer.parseInt(rs.getString("balance"));
                 if (cbal >= 200000) {
 
@@ -537,10 +524,7 @@ public class Cantidades extends javax.swing.JFrame {
             rs = stmt.executeQuery(SQL);
 
             if (rs.next() != rs.isAfterLast()) {
-                // String cuser = rs.getString("NoTarjeta");
-                // String nombre = rs.getString("Nombre");
                 String numero = rs.getString("NoCuenta");
-                // String cpass = rs.getString("Clave");
                 int cbal = Integer.parseInt(rs.getString("balance"));
                 if (cbal >= 300000) {
 
@@ -596,9 +580,6 @@ public class Cantidades extends javax.swing.JFrame {
             rs = stmt.executeQuery(SQL);
 
             if (rs.next() != rs.isAfterLast()) {
-                // String cuser = rs.getString("NoTarjeta");
-                // String nombre = rs.getString("Nombre");
-                // String cpass = rs.getString("Clave");
                 String numero = rs.getString("NoCuenta");
                 int cbal = Integer.parseInt(rs.getString("balance"));
                 if (cbal >= 400000) {
@@ -661,9 +642,7 @@ public class Cantidades extends javax.swing.JFrame {
             rs = stmt.executeQuery(SQL);
 
             if (rs.next() != rs.isAfterLast()) {
-                // String cuser = rs.getString("NoTarjeta");
                 String nombre = rs.getString("Nombre");
-                // String cpass = rs.getString("Clave");
                 int cbal = Integer.parseInt(rs.getString("balance"));
                 if (cbal >= 0) {
 

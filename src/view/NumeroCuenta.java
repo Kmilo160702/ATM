@@ -204,12 +204,9 @@ public class NumeroCuenta extends javax.swing.JFrame {
                 resultado = estado.executeQuery(SQL);
 
                 if (resultado.next() != resultado.isAfterLast()) {
-                    // String id = resultado.getString("id");
                     String usuario = resultado.getString("NoTarjeta");
                     String nombre = resultado.getString("Nombre");
                     String clave = resultado.getString("Clave");
-                    // String correo = resultado.getString("email");
-                    // String balance = resultado.getString("balance");
 
                     if (numero.equals(usuario) && contraseña.equals(clave)) {
 

@@ -33,7 +33,6 @@ public class CambioClave extends javax.swing.JFrame {
         initComponents();
         pass = p;
         setIconImage(new ImageIcon(getClass().getResource("/img/Logo.png")).getImage());
-
     }
 
     private void initComponents() {
@@ -249,9 +248,7 @@ public class CambioClave extends javax.swing.JFrame {
             rs = stmt.executeQuery(SQL);
 
             if (rs.next() != rs.isAfterLast()) {
-                // String cuser = rs.getString("NoTarjeta");
                 String nombre = rs.getString("Nombre");
-                // String cpass = rs.getString("Clave");
                 int cbal = Integer.parseInt(rs.getString("balance"));
                 if (cbal >= 0) {
 

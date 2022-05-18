@@ -206,9 +206,7 @@ public class Retiros extends javax.swing.JFrame {
                 rs = stmt.executeQuery(SQL);
 
                 if (rs.next() != rs.isAfterLast()) {
-                    // String cuser = rs.getString("NoTarjeta");
                     String numero = rs.getString("NoCuenta");
-                    // String cpass = rs.getString("Clave");
                     int cbal = Integer.parseInt(rs.getString("balance"));
                     if (cbal >= amount) {
 
@@ -216,7 +214,6 @@ public class Retiros extends javax.swing.JFrame {
                         setTemp((cbal - amount) - amount1);
 
                         System.out.println(getTemp());
-                        // System.out.println(amount);
 
                         String SQL1 = "SELECT * FROM clientes";
                         stmt = con.createStatement();
@@ -267,17 +264,12 @@ public class Retiros extends javax.swing.JFrame {
             rs = stmt.executeQuery(SQL);
 
             if (rs.next() != rs.isAfterLast()) {
-                // String cuser = rs.getString("NoTarjeta");
-                // String cpass = rs.getString("Clave");
                 String nombre = rs.getString("Nombre");
                 int cbal = Integer.parseInt(rs.getString("balance"));
                 if (cbal >= 0) {
 
                     amount1 = 0 * 4 / 1000;
                     temp = ((cbal - 0) - amount1);
-
-                    // System.out.println(temp);
-                    // System.out.println(amount);
                     String SQL1 = "SELECT * FROM clientes";
                     stmt = con.createStatement();
                     rs = stmt.executeQuery(SQL1);
@@ -293,8 +285,6 @@ public class Retiros extends javax.swing.JFrame {
                         dispose();
                     }
                 } else {
-                    // lbAdvertencia.setText("No tiene suficiente dinero");
-                    // limpiar();
                 }
                 con.close();
                 stmt.close();

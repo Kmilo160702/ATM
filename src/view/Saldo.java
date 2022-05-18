@@ -23,7 +23,6 @@ public class Saldo extends javax.swing.JFrame {
     public Saldo() {
         setUndecorated(true);
         initComponents();
-
     }
 
     String pass;
@@ -158,30 +157,20 @@ public class Saldo extends javax.swing.JFrame {
             rs = stmt.executeQuery(SQL);
 
             if (rs.next() != rs.isAfterLast()) {
-                // String cID = rs.getString("id");
-                // String cuser = rs.getString("NoTarjeta");
                 String cpass = rs.getString("Clave");
-                // String cemail = rs.getString("email");
-                // String cAdd = rs.getString("address");
-                // String cPh = rs.getString("mob_no");
                 String cbal = rs.getString("balance");
-                // int cbal = Integer.parseInt(rs.getNString("balance"));
                 if (cpass.equals(pass)) {
                     Saldo.setText("$" + cbal);
                     getObjetos(false);
-                    // volver();
                 }
             }
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
-
         }
-
     }
 
     private void getObjetos(boolean estConsultar) {
         btConsultar.setText("Volver");
-
         setEstaoBotones(estConsultar);
     }
 
@@ -205,17 +194,13 @@ public class Saldo extends javax.swing.JFrame {
             rs = stmt.executeQuery(SQL);
 
             if (rs.next() != rs.isAfterLast()) {
-                // String cuser = rs.getString("NoTarjeta");
                 String nombre = rs.getString("Nombre");
-                // String cpass = rs.getString("Clave");
                 int cbal = Integer.parseInt(rs.getString("balance"));
                 if (cbal >= 0) {
 
                     amount1 = 0 * 4 / 1000;
                     temp = ((cbal - 0) - amount1);
 
-                    // System.out.println(temp);
-                    // System.out.println(amount);
                     String SQL1 = "SELECT * FROM clientes";
                     stmt = con.createStatement();
                     rs = stmt.executeQuery(SQL1);
@@ -231,8 +216,6 @@ public class Saldo extends javax.swing.JFrame {
                         dispose();
                     }
                 } else {
-                    // lbAdvertencia.setText("No tiene suficiente dinero");
-                    // limpiar();
                 }
                 con.close();
                 stmt.close();

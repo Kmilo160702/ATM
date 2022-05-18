@@ -258,8 +258,6 @@ public class Transferencias extends javax.swing.JFrame {
                     rs = stmt.executeQuery(SQL);
 
                     if (rs.next() != rs.isAfterLast()) {
-
-                        // String cuser = rs.getString("NoCuenta");
                         String cpass = rs.getString("Clave");
                         int cbal = Integer.parseInt(rs.getString("balance"));
                         if (cpass.equals(pass) && amount <= cbal) {
@@ -323,7 +321,6 @@ public class Transferencias extends javax.swing.JFrame {
 
             if (rs.next() != rs.isAfterLast()) {
                 String cuser = rs.getString("Nombre");
-                // String cpass = rs.getString("Clave");
                 int cbal = Integer.parseInt(rs.getString("balance"));
                 if (cbal >= 0) {
 
@@ -331,8 +328,6 @@ public class Transferencias extends javax.swing.JFrame {
                     temp = ((cbal - 0) - amount1);
 
                     System.out.println(temp);
-                    // System.out.println(amount);
-
                     String SQL1 = "SELECT * FROM clientes";
                     stmt = con.createStatement();
                     rs = stmt.executeQuery(SQL1);
@@ -349,8 +344,6 @@ public class Transferencias extends javax.swing.JFrame {
                         dispose();
                     }
                 } else {
-                    // lbAdvertencia.setText("No tiene suficiente dinero");
-                    // limpiar();
                 }
                 con.close();
                 stmt.close();
